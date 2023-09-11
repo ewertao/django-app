@@ -57,6 +57,7 @@ The full list of 37 vulnerabilities can be found in the vulnerabilityscan.txt fi
 - Such configurations in the local test scenario could be passed through the kubectl exec command, but for the production environment it is not recommended.
 - In the secrets.yaml file are simulations of credentials and database string that can be passed in the deployment of the pods.
 
+___
 ## Conclusion
 
 Django applications are easily applicable to the world of containers and Kubernetes. Dispensing with the use of a python virtual environment and enabling the specific version selection when building the image.
