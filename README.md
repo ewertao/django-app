@@ -47,9 +47,11 @@ ___
 - The application has several security vulnerabilities due to the use of outdated versions. Such as CVE-2019-19844 (classified as Critical) that allows a account takeover.
 The full list of 37 vulnerabilities can be found in the vulnerabilityscan.txt file @ADD LINK
 - The python-alpine base image was chosen because it is a known stable and lean image, allowing for a smaller final image and also more secure.
-
-@ADD IMAGE
-
+    `REPOSITORY               TAG            IMAGE ID       CREATED        SIZE
+ewertao/k8s-django-app   latest         e48be40356c4   13 hours ago   138MB
+python                   3.5.2          432d0c6d4d9a   6 years ago    687MB
+python                   3.5.2-slim     783dcbbe2366   6 years ago    198MB
+python                   3.5.2-alpine   e70a322afafb   6 years ago    88.1MB`
 - The ewertao/k8s-django-app:latest image was signed using the cosign tool to guarantee its authenticity.
 - The scalability option selected in Kubernetes for the simulation in the controlled local environment was IP Cluster.
 - In the case of a Django application like this one in a productive environment in a Cloud Provider, the Load Balance services option would be the best, as it ensures the inclusion of nodes through services such as the AWS ASG.
