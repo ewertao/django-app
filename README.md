@@ -21,7 +21,7 @@ ___
 1. Clone the repository files to a local folder on your computer:
     
     ```
-   git clone git@github.com:ewertao/k8s-django-app.git
+   git clone [git@github.com:ewertao/k8s-django-app.git](https://github.com/ewertao/k8s-django-app.git)
     ```
     
 3. Move the the main folder k8s-django-app.
@@ -39,7 +39,7 @@ ___
 5. Apply the Kubernetes Manifests on folder k8s-config.
     
     ```
-   kubectl apply -f k8s-config/
+   kubectl apply -f k8s/
     ```
     
 6. Perform a port-forward from the cluster IP service port 8000 to your local machine port 8000 as well.
@@ -65,6 +65,8 @@ python                   3.5.2-slim     783dcbbe2366   6 years ago    198MB
 python                   3.5.2-alpine   e70a322afafb   6 years ago    88.1MB
 ```
 - The `ewertao/k8s-django-app:latest` image was signed using the cosign tool to guarantee its authenticity.
+- Fault tolerance can be easily proven by trying to delete any of the running pods.
+- CPU-based scalability can be tested using Metric Server and a stress testing application such as Apache Benchmark.
 - The scalability option selected in Kubernetes for the simulation in the controlled local environment was IP Cluster.
 - In the case of a Django application like this one in a productive environment in a Cloud Provider, the Load Balance services option would be the best, as it ensures the inclusion of nodes through services such as the AWS ASG.
 - It was not possible to register a superuser for the Django application when building the image or deploying the pods. Such configuration can be included in a future version through some python or bash script that works to include email, user and password via secret.
