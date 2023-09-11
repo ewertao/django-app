@@ -20,23 +20,33 @@ ___
 
 1. Clone the repository files to a local folder on your computer:
     
-    `git clone git@github.com:ewertao/k8s-django-app.git`
+    ```
+   git clone git@github.com:ewertao/k8s-django-app.git
+    ```
     
-2. Move the the main folder k8s-django-app.
+3. Move the the main folder k8s-django-app.
     
-    `cd k8s-django-app` 
+    ```
+   cd k8s-django-app
+    ```
     
-3. Pull the image available on my Docker hub.
+4. Pull the image available on my Docker hub.
     
-    `docker pull ewertao/k8s-django-app:latest`
+    ```
+   docker pull ewertao/k8s-django-app:latest
+    ```
     
-4. Apply the Kubernetes Manifests on folder k8s-config.
+5. Apply the Kubernetes Manifests on folder k8s-config.
     
-    `kubectl apply -f k8s-config/`
+    ```
+   kubectl apply -f k8s-config/
+    ```
     
-5. Perform a port-forward from the cluster IP service port 8000 to your local machine port 8000 as well.
+6. Perform a port-forward from the cluster IP service port 8000 to your local machine port 8000 as well.
     
-    `kubectl port-forward services/django-app-services 8000:8000`
+    ```
+   kubectl port-forward services/django-app-services 8000:8000
+    ```
     
 ___
 
@@ -45,14 +55,16 @@ ___
 - The application must not be implemented in a production environment.
 - The application uses outdated tools, such as versions of Python:3.5.2 and Django:1.10.5.
 - The application has several security vulnerabilities due to the use of outdated versions. Such as CVE-2019-19844 (classified as Critical) that allows a account takeover.
-The full list of 37 vulnerabilities can be found in the vulnerabilityscan.txt file @ADD LINK
+The full list of 37 vulnerabilities can be found in the vulnerabilityscan.txt file
 - The python-alpine base image was chosen because it is a known stable and lean image, allowing for a smaller final image and also more secure.
-    `REPOSITORY               TAG            IMAGE ID       CREATED        SIZE
+```
+REPOSITORY               TAG            IMAGE ID       CREATED        SIZE
 ewertao/k8s-django-app   latest         e48be40356c4   13 hours ago   138MB
 python                   3.5.2          432d0c6d4d9a   6 years ago    687MB
 python                   3.5.2-slim     783dcbbe2366   6 years ago    198MB
-python                   3.5.2-alpine   e70a322afafb   6 years ago    88.1MB`
-- The ewertao/k8s-django-app:latest image was signed using the cosign tool to guarantee its authenticity.
+python                   3.5.2-alpine   e70a322afafb   6 years ago    88.1MB
+```
+- The `ewertao/k8s-django-app:latest` image was signed using the cosign tool to guarantee its authenticity.
 - The scalability option selected in Kubernetes for the simulation in the controlled local environment was IP Cluster.
 - In the case of a Django application like this one in a productive environment in a Cloud Provider, the Load Balance services option would be the best, as it ensures the inclusion of nodes through services such as the AWS ASG.
 - It was not possible to register a superuser for the Django application when building the image or deploying the pods. Such configuration can be included in a future version through some python or bash script that works to include email, user and password via secret.
