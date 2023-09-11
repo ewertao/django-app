@@ -24,29 +24,35 @@ ___
    git clone https://github.com/ewertao/k8s-django-app.git
     ```
     
-3. Move the the main folder k8s-django-app.
+2. Move the the main folder k8s-django-app.
     
     ```
    cd k8s-django-app
     ```
     
-4. Pull the image available on my Docker hub.
+3. Pull the image available on my Docker hub.
     
     ```
    docker pull ewertao/k8s-django-app:latest
     ```
     
-5. Apply the Kubernetes Manifests on folder k8s-config.
+4. Apply the Kubernetes Manifests on folder k8s-config.
     
     ```
    kubectl apply -f k8s/
     ```
     
-6. Perform a port-forward from the cluster IP service port 8000 to your local machine port 8000 as well.
+5. Perform a port-forward from the cluster IP service port 8000 to your local machine port 8000 as well.
     
     ```
    kubectl port-forward services/django-app-services 8000:8000
     ```
+    
+6. Access the application interface by opening your preferred browser and accessing
+    
+    ```
+   localhost:8000/api
+    ``` 
     
 ___
 
