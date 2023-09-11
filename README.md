@@ -10,18 +10,18 @@ ___
 
 ### Requirements
 
-- Git versioning control system installed.
-- Docker or other container platform of your choice installed.
-- Kind or other tool for running local Kubernetes clusters
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) versioning control system installed. 
+- [Docker](https://docs.docker.com/engine/install/) or other container platform of your choice installed.
+- [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation) or other tool for running local Kubernetes clusters
 - A local Kubernetes cluster up and running at least 2 nodes
-- kubectl tool for CLI interaction
+- [kubectl](https://kubernetes.io/docs/tasks/tools/) tool for CLI interaction
 
 ### Steps
 
 1. Clone the repository files to a local folder on your computer:
     
     ```
-   git clone [git@github.com:ewertao/k8s-django-app.git](https://github.com/ewertao/k8s-django-app.git)
+   git clone https://github.com/ewertao/k8s-django-app.git
     ```
     
 3. Move the the main folder k8s-django-app.
@@ -54,8 +54,8 @@ ___
 
 - The application must not be implemented in a production environment.
 - The application uses outdated tools, such as versions of Python:3.5.2 and Django:1.10.5.
-- The application has several security vulnerabilities due to the use of outdated versions. Such as CVE-2019-19844 (classified as Critical) that allows a account takeover.
-The full list of 37 vulnerabilities can be found in the vulnerabilityscan.txt file
+- The application has several security vulnerabilities due to the use of outdated versions. Such as [CVE-2019-19844 (classified as Critical)](https://nvd.nist.gov/vuln/detail/CVE-2019-19844) that allows a account takeover.
+The full list of 37 vulnerabilities can be found in the [vulnerabilityscan.txt](https://github.com/ewertao/k8s-django-app/blob/main/vulnerabilityscan.txt) file
 - The python-alpine base image was chosen because it is a known stable and lean image, allowing for a smaller final image and also more secure.
 ```
 REPOSITORY               TAG            IMAGE ID       CREATED        SIZE
