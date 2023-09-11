@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: django-app
-        image: ewertao/esantos-app:1.0
+        image: ewertao/k8s-django-app:latest
         envFrom:
         - secretRef:
             name: django-app-secret
