@@ -2,7 +2,7 @@
 
 ## About
 
-This repository is a demonstration of how to deploy a Django based application in a highly availabilible and scalable kubernetes environment. Using as model the repo django-realworld-example-app by gothinkster.
+This repository is a demonstration of how to deploy a Django based application in a highly availabilible and scalable kubernetes environment. Using as model the repo [django-realworld-example-app](https://github.com/gothinkster/django-realworld-example-app/) by gothinkster.
 
 ___
 
