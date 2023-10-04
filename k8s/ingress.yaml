@@ -4,6 +4,7 @@ metadata:
   name: django-app-ingress
   labels:
     name: django-app-ingress
+  namespace: dev
 spec:
   rules:
   - host: localhost
